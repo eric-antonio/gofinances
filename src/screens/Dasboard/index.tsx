@@ -1,19 +1,13 @@
 import React from "react";
-import { View, Text , StyleSheet} from "react-native";
+import {Text } from "react-native";
+
+import { Container } from "./styles";
 
 export function Dashboard(){
   return(
-    <View style={styles.conrainer}>
+    <Container>
       <Text>DashBoard Page</Text>
-    </View>
+    </Container>
   )
 }
 
-const styles = StyleSheet.create({
-  conrainer:{
-    flex:1,
-    justifyContent:'center',
-    alignContent:'center',
-    fontSize:'19'
-  }
-})
