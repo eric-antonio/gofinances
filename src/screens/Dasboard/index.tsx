@@ -1,12 +1,12 @@
 import React from "react";
 import {Text } from "react-native";
 
-import { Container } from "./styles";
+import { Container, Title } from "./styles";
 
 export function Dashboard(){
   return(
     <Container>
-      <Text>DashBoard Page</Text>
+      <Title>DashBoard</Title>
     </Container>
   )
 }
