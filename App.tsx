@@ -1,9 +1,17 @@
 import React from 'react';
+import {ThemeProvider} from 'styled-components'
+
+import theme from './src/global/styles/theme'
 import { Dashboard } from './src/screens/Dasboard';
-import { View, Text } from 'react-native';
+
 
 
 export default function App() {
-  return <Dashboard/>
+  return (
+    <ThemeProvider theme={theme}>
+      <Dashboard/>
+    </ThemeProvider>
+    
+  )
 }
 
