@@ -8,6 +8,7 @@ export const Container = styled.View`
 `;
 
 export const Title = styled.Text`
-  color: whitesmoke;
-  font-size: large;
+  font-size: 18px;
+  font-weight: bold;
+  color: purple;
 `;
