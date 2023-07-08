@@ -8,6 +8,7 @@ import {
   User,
   UserGreeting,
   UserName,
+  UserWrapper
 
 } from "./styles";
 
@@ -16,20 +17,19 @@ export function Dashboard(){
   return(
     <Container>
       <Header>
+        <UserWrapper>
+          <UserInfo>
+            <Photo source = {{uri:'https://github.com/eric-antonio.png'}}/>
 
-        <UserInfo>
+            <User>
 
-          <Photo source = {{uri:'https://github.com/eric-antonio.png'}}/>
+              <UserGreeting>Olá,</UserGreeting>
+              <UserName>Éric António </UserName>
 
-          <User>
+            </User>
 
-            <UserGreeting>Olá,</UserGreeting>
-            <UserName>Éric António </UserName>
-
-          </User>
-
-        </UserInfo>
-
+          </UserInfo>
+        </UserWrapper>
       </Header>
     </Container>
   )

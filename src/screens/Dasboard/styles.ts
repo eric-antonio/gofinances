@@ -17,6 +17,12 @@ export const Header =  styled.View`
   background-color: ${({theme}) => theme.colors.primary};
 `;
 
+export const UserWrapper =styled.View`
+  width: 100%;
+  /* Cima baixo 0px dos lados 24px */
+  padding: 0 24px;
+`;
+
 export const UserInfo = styled.View`
   flex-direction: row;
   align-items: center;
@@ -24,8 +30,8 @@ export const UserInfo = styled.View`
 `;
 
 export const Photo= styled.Image`
-  width: ${RFValue(55)}px;
-  height: ${RFValue(55)}px;
+  width: ${RFValue(48)}px;
+  height: ${RFValue(48)}px;
   border-radius: 10px;
 `;
 
