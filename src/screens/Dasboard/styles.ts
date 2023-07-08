@@ -33,6 +33,12 @@ export const User= styled.View`
   margin-left:17px ;
 `;
 
-export const UserGreeting= styled.Text``;
+export const UserGreeting= styled.Text`
+  color: ${({theme})=> theme.colors.shape};
+  font-size: ${RFValue(18)}px;
+  font-family: ${({theme}) => theme.fonts.regular};
+`;
 
-export const UserName= styled.Text``;
+export const UserName= styled.Text`
+  
+`;
