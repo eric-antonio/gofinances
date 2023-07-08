@@ -18,6 +18,8 @@ export const Header =  styled.View`
 `;
 
 export const UserInfo = styled.View`
+  flex-direction: row;
+  align-items: center;
 
 `;
 
@@ -27,7 +29,9 @@ export const Photo= styled.Image`
   border-radius: 10px;
 `;
 
-export const User= styled.View``;
+export const User= styled.View`
+  margin-left:17px ;
+`;
 
 export const UserGreeting= styled.Text``;
 
