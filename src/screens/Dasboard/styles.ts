@@ -1,6 +1,6 @@
 import styled from "styled-components/native";
 import theme from "../../global/styles/theme";
-import { RFPercentage } from "react-native-responsive-fontsize";
+import { RFPercentage, RFValue} from "react-native-responsive-fontsize";
 import { View } from "react-native";
 
 export const Container = styled.View`
@@ -21,7 +21,11 @@ export const UserInfo = styled.View`
 
 `;
 
-export const Photo= styled.Image``;
+export const Photo= styled.Image`
+  width: ${RFValue(55)}px;
+  height: ${RFValue(55)}px;
+  border-radius: 10px;
+`;
 
 export const User= styled.View``;
 
