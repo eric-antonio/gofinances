@@ -1,6 +1,5 @@
 import React from "react";
-import { Text, View } from "react-native";
-import {} from'@expo/vector-icons';
+
 import { 
   Container,
   Header,
@@ -9,7 +8,8 @@ import {
   User,
   UserGreeting,
   UserName,
-  UserWrapper
+  UserWrapper,
+  Icon
 
 } from "./styles";
 
@@ -30,7 +30,9 @@ export function Dashboard(){
             </User>
 
           </UserInfo>
+          <Icon name='power'/>
         </UserWrapper>
+        
       </Header>
     </Container>
   )
