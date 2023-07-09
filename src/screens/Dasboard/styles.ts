@@ -21,6 +21,9 @@ export const UserWrapper =styled.View`
   width: 100%;
   /* Cima baixo 0px dos lados 24px */
   padding: 0 24px;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
 `;
 
 export const UserInfo = styled.View`
