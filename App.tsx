@@ -1,5 +1,6 @@
 import React from 'react';
 import {ThemeProvider} from 'styled-components';
+import { StatusBar } from 'expo-status-bar';
 import SplashScreen from 'expo-splash-screen';
 import AppLoading from 'expo-app-loading';
 import {
@@ -26,6 +27,7 @@ export default function App() {
   }
   return (
     <ThemeProvider theme={theme}>
+      <StatusBar style="light" />
       <Dashboard/>
     </ThemeProvider>
     
