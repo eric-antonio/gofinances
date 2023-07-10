@@ -37,11 +37,7 @@ export function Dashboard(){
         
       </Header>
 
-      <HighlightCards 
-        horizontal
-        showsHorizontalScrollIndicator={false}
-        contentContainerStyle={{paddingHorizintal:24}}
-      >
+      <HighlightCards>
 
         <HighlightCard/>
         <HighlightCard/>
