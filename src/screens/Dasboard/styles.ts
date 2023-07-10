@@ -22,6 +22,7 @@ export const UserWrapper =styled.View`
   width: 100%;
 
   padding: 0 24px;
+  /* This will only be apolied on ios Iphone X */
   margin-top: ${getStatusBarHeight() + RFValue(28)}px;
   
   flex-direction: row;
