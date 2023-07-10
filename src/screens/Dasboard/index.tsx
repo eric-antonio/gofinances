@@ -9,7 +9,8 @@ import {
   UserGreeting,
   UserName,
   UserWrapper,
-  Icon
+  Icon,
+  HighlightCards
 
 } from "./styles";
 import { HighlightCard } from "../../components/HighlightCard";
@@ -36,7 +37,17 @@ export function Dashboard(){
         
       </Header>
 
-      <HighlightCard/>
+      <HighlightCards 
+        horizontal
+        showsHorizontalScrollIndicator={false}
+      >
+
+        <HighlightCard/>
+        <HighlightCard/>
+        <HighlightCard/>
+
+      </HighlightCards>
+     
     </Container>
   )
 }
