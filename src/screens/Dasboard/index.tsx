@@ -31,6 +31,7 @@ export function Dashboard(){
             </User>
 
           </UserInfo>
+          
           <Icon name='power'/>
         </UserWrapper>
         

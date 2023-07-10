@@ -10,24 +10,29 @@ export const Container = styled.View`
 `;
 
 export const Header =  styled.View`
-  justify-content: center;
-  align-items: center;
   width: 100%;
-  flex-direction: row;
   height: ${RFPercentage(42)}px;
+
   background-color: ${({theme}) => theme.colors.primary};
+
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: row;
+
+
 `;
 
 export const UserWrapper =styled.View`
   width: 100%;
-
   padding: 0 24px;
+
   /* This will only be apolied on ios Iphone X */
   margin-top: ${getStatusBarHeight() + RFValue(28)}px;
   
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
+
 `;
 
 export const UserInfo = styled.View`
@@ -43,8 +48,7 @@ export const Photo= styled.Image`
 `;
 
 export const User= styled.View`
-  margin-left:17px ;
-  
+  margin-left:17px ;  
 `;
 
 export const UserGreeting= styled.Text`
@@ -70,4 +74,9 @@ export const HighlightCards = styled.ScrollView.attrs({
   showsHorizontalScrollIndicator: false,
   contentContainerStyle:{paddingHorizintal:24}
 
-})``;
+})`
+
+  width:100%;
+  position: absolute;
+  margin-top:${RFPercentage(20)}px;
+`;
