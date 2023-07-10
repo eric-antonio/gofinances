@@ -15,6 +15,7 @@ import {
 
 } from "./styles";
 import { HighlightCard } from "../../components/HighlightCard";
+import { TransactionCard } from "../../components/TransactionCard";
 
 
 export function Dashboard(){
@@ -66,6 +67,7 @@ export function Dashboard(){
 
       <Transactions>
         <Title>Listagem</Title>
+        <TransactionCard/>
       </Transactions>
      
     </Container>
