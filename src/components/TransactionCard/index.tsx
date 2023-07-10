@@ -11,7 +11,24 @@ import {
 }
 from './styles'
 
-export function TransactionCard(){
+interface CategoryProps{
+  key: string;
+  name: string ;
+  icon: string; 
+}
+
+interface Props {
+  title: string;
+  amount: string;
+  category: CategoryProps;
+  date: string;
+}
+export function TransactionCard({
+  title,
+  amount, 
+  category, 
+  date 
+}:Props){
   return(
     <Container>
       <Title> Desevolvimento de site</Title>
