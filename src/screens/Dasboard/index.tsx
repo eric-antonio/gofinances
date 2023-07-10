@@ -9,7 +9,9 @@ import {
   UserName,
   UserWrapper,
   Icon,
-  HighlightCards
+  HighlightCards,
+  Transactions,
+  Title
 
 } from "./styles";
 import { HighlightCard } from "../../components/HighlightCard";
@@ -60,6 +62,11 @@ export function Dashboard(){
         />
 
       </HighlightCards>
+
+
+      <Transactions>
+        <Title>Listagem</Title>
+      </Transactions>
      
     </Container>
   )
