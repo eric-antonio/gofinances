@@ -38,7 +38,7 @@ export function Dashboard(){
       amount:"15.000,00MT",
       category:{
         name:'Alimentação',
-        icon:'dollar-sign',
+        icon:'coffee',
       },
       date:"08/07/23"
     },
@@ -48,7 +48,7 @@ export function Dashboard(){
       amount:"17.000,00MT",
       category:{
         name:'Casa',
-        icon:'dollar-sign',
+        icon:'home',
       },
       date:"5/07/23"
     },
