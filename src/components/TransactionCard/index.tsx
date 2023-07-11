@@ -31,14 +31,14 @@ export function TransactionCard({
 }:Props){
   return(
     <Container>
-      <Title> Desevolvimento de site</Title>
-      <Amount> 12.000,00Mt</Amount>
+      <Title>{title}</Title>
+      <Amount>{amount}</Amount>
       <Footer>
         <Category>
           <Icon name="dollar-sign"/>
-          <CategoryName>Vendas</CategoryName>
+          <CategoryName>{category}</CategoryName>
         </Category>
-        <Date> 10/07/23 </Date>
+        <Date>{date}</Date>
       </Footer>
     </Container>
   )
