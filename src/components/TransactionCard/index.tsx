@@ -30,14 +30,22 @@ export function TransactionCard({
 }:Props){
   return(
     <Container>
+
       <Title>{title}</Title>
+
       <Amount>{amount}</Amount>
+
       <Footer>
+
         <Category>
+
           <Icon name="dollar-sign"/>
           <CategoryName>{category.name}</CategoryName>
+
         </Category>
+
         <Date>{date}</Date>
+        
       </Footer>
     </Container>
   )
