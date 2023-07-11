@@ -17,6 +17,7 @@ interface CategoryProps{
 }
 
 interface Data{
+  type: 'positeve'|'negative'
   title: string;
   amount: string;
   category: CategoryProps;

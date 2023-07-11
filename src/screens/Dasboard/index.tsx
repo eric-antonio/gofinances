@@ -23,6 +23,7 @@ import { getBottomSpace } from "react-native-iphone-x-helper";
 export function Dashboard(){
   const data = [
     {
+      type:'positive',
       title:"Desenvolvimento de Site",
       amount:"12.000,00MT",
       category:{
@@ -32,22 +33,34 @@ export function Dashboard(){
       date:"11/07/23"
     },
     {
-      title:"Desenvolvimento de Site",
-      amount:"12.000,00MT",
+      type:'negative',
+      title:"Jantar Com Mor(El Patron)",
+      amount:"15.000,00MT",
       category:{
-        name:'Vendas',
+        name:'Alimentação',
         icon:'dollar-sign',
       },
-      date:"11/07/23"
+      date:"08/07/23"
     },
     {
-      title:"Desenvolvimento de Site",
-      amount:"12.000,00MT",
+      type:'negative',
+      title:"Aluguel do apartamento",
+      amount:"17.000,00MT",
+      category:{
+        name:'Casa',
+        icon:'dollar-sign',
+      },
+      date:"5/07/23"
+    },
+    {
+      type:'positive',
+      title:"Toyota Mark-X 2010",
+      amount:"560.000,00MT",
       category:{
         name:'Vendas',
         icon:'dollar-sign',
       },
-      date:"11/07/23"
+      date:"01/07/23"
     },
   ]
 
@@ -77,20 +90,20 @@ export function Dashboard(){
         <HighlightCard 
           type="up"
           title="Entrdas" 
-          amount="45.000,00MT" 
-          lastTransaction="Ultima entrada dia 13 de Junho."
+          amount="12.000,00MT" 
+          lastTransaction="Ultima entrada dia 01 de Julho."
         />
 
         <HighlightCard 
           type="down"
           title="Saidas" 
-          amount="3.000,00MT" 
-          lastTransaction="Ultima saida dia 19 de Junho."
+          amount="15.000,00MT" 
+          lastTransaction="Ultima saida dia 08 de Julho."
         />
         <HighlightCard 
           type="total"
           title="Total na conta" 
-          amount="42.000,00MT" 
+          amount="540.000,00MT" 
           lastTransaction="Ultima entrada dia 13 de Junho."
         />
 
