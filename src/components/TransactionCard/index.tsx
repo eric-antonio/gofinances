@@ -33,7 +33,9 @@ export function TransactionCard({data}:Props){
 
       <Title>{data.title}</Title>
 
-      <Amount>{data.amount}</Amount>
+      <Amount type={data.type}>
+        {data.amount}
+      </Amount>
 
       <Footer>
 
