@@ -11,7 +11,8 @@ import {
   Icon,
   HighlightCards,
   Transactions,
-  Title
+  Title,
+  TransactionList,
 
 } from "./styles";
 import { HighlightCard } from "../../components/HighlightCard";
@@ -19,16 +20,36 @@ import { TransactionCard } from "../../components/TransactionCard";
 
 
 export function Dashboard(){
-  const data = {
-    title:"Desenvolvimento de Site",
-    amount:"12.000,00MT",
-    category:{
-      name:'Vendas',
-      icon:'dollar-sign',
+  const data = [
+    {
+      title:"Desenvolvimento de Site",
+      amount:"12.000,00MT",
+      category:{
+        name:'Vendas',
+        icon:'dollar-sign',
+      },
+      date:"11/07/23"
     },
-    date:"11/07/23"
-  }
-  
+    {
+      title:"Desenvolvimento de Site",
+      amount:"12.000,00MT",
+      category:{
+        name:'Vendas',
+        icon:'dollar-sign',
+      },
+      date:"11/07/23"
+    },
+    {
+      title:"Desenvolvimento de Site",
+      amount:"12.000,00MT",
+      category:{
+        name:'Vendas',
+        icon:'dollar-sign',
+      },
+      date:"11/07/23"
+    },
+  ]
+
   return(
     <Container>
       <Header>
@@ -77,7 +98,11 @@ export function Dashboard(){
 
       <Transactions>
         <Title>Listagem</Title>
-        <TransactionCard data={data}/>
+        <TransactionList
+          data={data}
+          renderItem= {({item}) => <TransactionCard data={item}/> }
+          showsVerticalScrollIndicator={false}
+        />
       </Transactions>
      
     </Container>
