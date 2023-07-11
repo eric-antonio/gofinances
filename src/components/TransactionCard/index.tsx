@@ -12,7 +12,6 @@ import {
 from './styles'
 
 interface CategoryProps{
-  key: string;
   name: string ;
   icon: string; 
 }
@@ -36,7 +35,7 @@ export function TransactionCard({
       <Footer>
         <Category>
           <Icon name="dollar-sign"/>
-          <CategoryName>{category}</CategoryName>
+          <CategoryName>{category.name}</CategoryName>
         </Category>
         <Date>{date}</Date>
       </Footer>
