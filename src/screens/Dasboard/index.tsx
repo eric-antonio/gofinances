@@ -58,7 +58,7 @@ export function Dashboard(){
       amount:"560.000,00MT",
       category:{
         name:'Vendas',
-        icon:'dollar-sign',
+        icon:'shopping-bag',
       },
       date:"01/07/23"
     },
@@ -115,10 +115,7 @@ export function Dashboard(){
         <TransactionList
           data={data}
           renderItem= {({item}) => <TransactionCard data={item}/> }
-          showsVerticalScrollIndicator={false}
-          contentContainerStyle={{
-            paddingBottom: getBottomSpace( )
-          }}
+
         />
       </Transactions>
      
