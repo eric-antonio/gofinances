@@ -39,7 +39,7 @@ export function TransactionCard({data}:Props){
 
         <Category>
 
-          <Icon name="dollar-sign"/>
+          <Icon name={data.category.icon}/>
           <CategoryName>{data.category.name}</CategoryName>
 
         </Category>
