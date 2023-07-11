@@ -19,6 +19,16 @@ import { TransactionCard } from "../../components/TransactionCard";
 
 
 export function Dashboard(){
+  const data = {
+    title:"Desenvolvimento de Site",
+    amount:"12.000,00MT",
+    category:{
+      name:'Vendas',
+      icon:'dollar-sign',
+    },
+    date:"11/07/23"
+  }
+  
   return(
     <Container>
       <Header>
@@ -67,14 +77,7 @@ export function Dashboard(){
 
       <Transactions>
         <Title>Listagem</Title>
-        <TransactionCard 
-          title="Desenvolvimento de Site"
-          amount="12.000,00MT"
-          category={{
-            name:'vendas',
-            icon:'=dollar-sign'
-          }}
-        />
+        <TransactionCard data={data}/>
       </Transactions>
      
     </Container>
