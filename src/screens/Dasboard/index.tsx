@@ -108,7 +108,12 @@ export function Dashboard(){
           amount="15.000,00MT" 
           lastTransaction="Ultima saida dia 08 de Julho."
         />
-
+        <HighlightCard 
+          type="total"
+          title="Total na conta" 
+          amount="540.000,00MT" 
+          lastTransaction="Ultima entrada dia 13 de Junho."
+        />
 
       </HighlightCards>
 
