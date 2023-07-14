@@ -118,7 +118,14 @@ export function Dashboard(){
       </HighlightCards>
 
 
+      <Transactions>
+        <Title>Listagem</Title>
+        <TransactionList
+          data={data}
+          keyExtractor = { item => item.id}
+          renderItem= {({item}) => <TransactionCard data={item}/> }
 
+        />
       </Transactions>
      
     </Container>
