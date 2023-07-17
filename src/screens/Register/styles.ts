@@ -2,7 +2,8 @@ import { RFPercentage, RFValue } from "react-native-responsive-fontsize";
 import styled from "styled-components/native";
 
 export const Container = styled.View`
-
+  flex: 1;
+  background-color: ${({theme}) => theme.colors.background};
 `;
 
 export const Header = styled.View`
@@ -17,6 +18,14 @@ export const Header = styled.View`
 export const Title = styled.Text`
   font-size:18px;
   color: ${({theme}) => theme.colors.text};
-  background-color: ${({theme}) => theme.fonts.regular};
+  font-family: ${({theme}) => theme.fonts.regular};
   
+`;
+
+export const Form =  styled.View`
+  flex: 1;
+  
+  width: 100%;
+
+  padding: 24px;
 `;

@@ -1,6 +1,6 @@
 import React from "react";
 import { Input } from "../../components/Form/Input/index";
-import { Container, Header, Title } from "./styles";
+import { Container, Header, Title,Form } from "./styles";
 
 export function Register() {
   return (
@@ -8,6 +8,20 @@ export function Register() {
       <Header>
         <Title>Cadastro</Title>
       </Header>
+
+
+      <Form>
+
+        <Input
+          placeholder="Nome"
+        />
+
+        <Input
+          placeholder="Preço"
+        />
+
+      </Form>
+
     </Container>
   );
 }
