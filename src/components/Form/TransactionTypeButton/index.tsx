@@ -6,17 +6,23 @@ import {
   Title
 }from './styles';
 
+const icons = {
+  up:'arrow-up-circle',
+  down:'arrow-down-circle'
+}
+
 interface Pros extends TouchableOpacityProps{
   title : string;
   type: 'up' | 'down';
 }
 
-export function TransactionTypeButton({title, ...rest} : Pros){
+export function TransactionTypeButton({type, title, ...rest} : Pros){
   return(
-    <Container>
+    <Container {...rest}>
 
-      <Icon/>
+      <Icon name={icons[type]}/>
       <Title> {title}</Title>
+      
     </Container>
   )
 }
