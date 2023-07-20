@@ -1,7 +1,7 @@
 import React from "react";
 import { Input } from "../../components/Form/Input/index";
 import { Button } from "../../components/Form/Button/index";
-import { Container, Header, Title,Form,Fildes } from "./styles";
+import { Container, Header, Title,Form,Fildes , TransactionTypes} from "./styles";
 import { TransactionTypeButton } from "../../components/Form/TransactionTypeButton";
 
 export function Register() {
@@ -24,15 +24,17 @@ export function Register() {
             placeholder="Preço"
           />
 
-          <TransactionTypeButton
-            type="up"
-            title="Income"
-          />
+          <TransactionTypes>
+            <TransactionTypeButton
+              type="up"
+              title="Income"
+            />
 
-          <TransactionTypeButton
-            type="down"
-            title="Income"
-          />
+            <TransactionTypeButton
+              type="down"
+              title="Income"
+            />
+          </TransactionTypes>
 
         </Fildes>
 
