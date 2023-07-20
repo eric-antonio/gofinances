@@ -1,10 +1,11 @@
-import React from "react";
+import React , {useState}from "react";
 import { Input } from "../../components/Form/Input/index";
 import { Button } from "../../components/Form/Button/index";
 import { Container, Header, Title,Form,Fildes , TransactionTypes} from "./styles";
 import { TransactionTypeButton } from "../../components/Form/TransactionTypeButton";
 
 export function Register() {
+  const [transactionType, setTransactionType] = useState('');
   return (
     <Container>
       <Header>
