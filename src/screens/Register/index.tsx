@@ -29,11 +29,13 @@ export function Register() {
             <TransactionTypeButton
               type="up"
               title="Income"
+              onPress={() => handelTransactionTypeSelect('up')}
             />
 
             <TransactionTypeButton
               type="down"
               title="Outcome"
+              onPress={() => handelTransactionTypeSelect('down')}
             />
           </TransactionTypes>
 
