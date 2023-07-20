@@ -34,5 +34,6 @@ export const Fildes =  styled.View``;
 
 export const TransactionTypes= styled.View`
   flex-direction:row;
+  justify-content: space-between;
 `;
 
