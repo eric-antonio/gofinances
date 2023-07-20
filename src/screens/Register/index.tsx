@@ -6,6 +6,11 @@ import { TransactionTypeButton } from "../../components/Form/TransactionTypeButt
 
 export function Register() {
   const [transactionType, setTransactionType] = useState('');
+
+  function handelTransactionTypeSelect(type: string){
+
+  }
+
   return (
     <Container>
       <Header>
