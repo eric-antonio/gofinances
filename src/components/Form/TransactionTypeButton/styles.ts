@@ -4,9 +4,15 @@ import { RFValue } from "react-native-responsive-fontsize";
 
 export const Container = styled.TouchableOpacity`
   width: 100%;
+
   flex-direction: row;
   align-items: center;
+  justify-content: center;
+
+  border-radius: 5px;
   border: 1px solid ${({theme})=> theme.colors.shape};
+
+  padding: 16px 59px;
 `;
 
 export const Icon = styled(Feather)`
