@@ -31,3 +31,8 @@ export const Form =  styled.View`
 `;
 
 export const Fildes =  styled.View``;
+
+export const TransactionTypes= styled.View`
+  flex-direction:row;
+`;
+
