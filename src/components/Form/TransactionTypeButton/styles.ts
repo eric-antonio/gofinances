@@ -6,9 +6,14 @@ export const Container = styled.TouchableOpacity`
   width: 100%;
   flex-direction: row;
   align-items: center;
+  border: 1px solid ${({theme})=> theme.colors.shape};
 `;
 
-export const Icon = styled(Feather)``;
+export const Icon = styled(Feather)`
+
+  font-size: ${RFValue(24)}px;
+  margin-right: 12px;
+`;
 
 export const Title = styled.Text`
   font-family: ${({theme})=> theme.fonts.regular};
