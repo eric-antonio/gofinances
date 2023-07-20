@@ -30,7 +30,7 @@ export function Register() {
           />
 
           <TransactionTypeButton
-            type="up"
+            type="down"
             title="Income"
           />
 
