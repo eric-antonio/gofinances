@@ -10,7 +10,7 @@ export const Container = styled.TouchableOpacity`
   justify-content: center;
 
   border-radius: 5px;
-  border: 1px solid ${({theme})=> theme.colors.shape};
+  border: 1.5px solid ${({theme})=> theme.colors.text};
 
   padding: 16px 59px;
 `;
