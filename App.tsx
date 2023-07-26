@@ -28,9 +28,7 @@ export default function App() {
   }
   return (
     <ThemeProvider theme={theme}>
-      <StatusBar style="light" />
-      {/* <Dashboard/> */}
-      <Register/>
+    
     </ThemeProvider>
     
   )
