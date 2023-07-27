@@ -19,7 +19,7 @@ interface Pros extends TouchableOpacityProps{
 
 export function TransactionTypeButton({type, title, isActive, ...rest} : Pros){
   return(
-    <Container {...rest} isActive={isActive}>
+    <Container isActive={isActive} type={type} {...rest}>
 
       <Icon 
         name={icons[type]}
