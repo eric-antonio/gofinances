@@ -5,10 +5,12 @@ import { Container, Header, Title,Form,Fildes , TransactionTypes} from "./styles
 import { TransactionTypeButton } from "../../components/Form/TransactionTypeButton";
 
 export function Register() {
+  // Esse estado serve para ajuda a identificar que botão esta a ser selecionado!
   const [transactionType, setTransactionType] = useState('');
-
+  
+  // TODO: Temos aqui a função 
   function handelTransactionTypeSelect(type: 'up' | 'down'){
-
+    setTransactionType(type);
   }
 
   return (
@@ -35,12 +37,14 @@ export function Register() {
               type="up"
               title="Income"
               onPress={() => handelTransactionTypeSelect('up')}
+              isActive={transactionType === 'up'}
             />
 
             <TransactionTypeButton
               type="down"
               title="Outcome"
               onPress={() => handelTransactionTypeSelect('down')}
+              isActive={transactionType === 'down'}
             />
           </TransactionTypes>
 
