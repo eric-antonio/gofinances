@@ -6,8 +6,10 @@ interface IconProps{
   type: 'up' | 'down';
 
 }
-
-export const Container = styled.TouchableOpacity`
+interface ContainerProps{
+  isActive: boolean;
+}
+export const Container = styled.TouchableOpacity<ContainerProps>`
   width: 48%;
 
   flex-direction: row;
