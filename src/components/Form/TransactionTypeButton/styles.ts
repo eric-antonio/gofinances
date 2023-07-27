@@ -18,10 +18,18 @@ export const Container = styled.TouchableOpacity<ContainerProps>`
   align-items: center;
   justify-content: center;
 
+ 
+  border-width: ${({isActive}) => isActive? 0 : 1.5}px;
+  border-style:solid;
+  border-color: ${({theme})=> theme.colors.text};
   border-radius: 5px;
-  border: 1.5px solid ${({theme})=> theme.colors.text};
 
   padding: 16px;
+
+  /* 
+    * This Section below  is comparing the Type and if is Active the button 
+    * then apply a background color using CSS; 
+  */
   ${({isActive , type }) => isActive &&  type === 'down' && css`
     background-color:${({theme}) => theme.colors.attention_ligth} ;
   `}
