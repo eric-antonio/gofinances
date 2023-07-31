@@ -4,6 +4,7 @@ import { Button } from "../../components/Form/Button/index";
 import { Container, Header, Title,Form,Fildes , TransactionTypes} from "./styles";
 import { TransactionTypeButton } from "../../components/Form/TransactionTypeButton";
 import { Category } from "../../components/TransactionCard/styles";
+import { CategorySelect } from "../../components/Form/CategorySelect";
 export function Register() {
   // Esse estado serve para ajuda a identificar que botão esta a ser selecionado!
   const [transactionType, setTransactionType] = useState('');
@@ -49,6 +50,7 @@ export function Register() {
             />
 
           </TransactionTypes>
+          <CategorySelect title="Categoria"/>
 
         </Fildes>
 
