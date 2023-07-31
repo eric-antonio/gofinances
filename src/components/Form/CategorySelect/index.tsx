@@ -1,13 +1,20 @@
 import React from 'react'
 import{
     Container,
+    Category
 } from'./styles';
 
-export function CategorySelect(){
+interface Props{
+    title: string;
+}
+
+export function CategorySelect ( {title} : Props){
 
     return(
         <Container>
-
+            <Category>
+                {title}
+            </Category>
         </Container>
     )
 
