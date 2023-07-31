@@ -46,6 +46,7 @@ export function Register() {
               onPress={() => handelTransactionTypeSelect('down')}
               isActive={transactionType === 'down'}
             />
+            
           </TransactionTypes>
 
         </Fildes>
