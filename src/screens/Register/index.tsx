@@ -3,7 +3,7 @@ import { Input } from "../../components/Form/Input/index";
 import { Button } from "../../components/Form/Button/index";
 import { Container, Header, Title,Form,Fildes , TransactionTypes} from "./styles";
 import { TransactionTypeButton } from "../../components/Form/TransactionTypeButton";
-
+import { Category } from "../../components/TransactionCard/styles";
 export function Register() {
   // Esse estado serve para ajuda a identificar que botão esta a ser selecionado!
   const [transactionType, setTransactionType] = useState('');
@@ -15,11 +15,12 @@ export function Register() {
 
   return (
     <Container>
+      {/*  Titulo da Pagina  */}
       <Header>
         <Title>Cadastro</Title>
       </Header>
 
-
+      {/* Formularios  */}
       <Form>
 
         <Fildes>
@@ -46,11 +47,12 @@ export function Register() {
               onPress={() => handelTransactionTypeSelect('down')}
               isActive={transactionType === 'down'}
             />
-            
+
           </TransactionTypes>
 
         </Fildes>
 
+        {/* Botão laranja! */}
         <Button
           title="Enviar"
         />
