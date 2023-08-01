@@ -1,4 +1,5 @@
 import { RFValue } from "react-native-responsive-fontsize";
+import {Feather} from '@expo/vector-icons'
 import styled from "styled-components/native";
 
 export const Container = styled.View`
@@ -24,3 +25,6 @@ export const Title = styled.Text`
     color:${({theme})=> theme.colors.shape};
     font-size: ${RFValue(18)}px;
 `;
+export const Category =  styled.View``;
+export const Icon =  styled(Feather)``;
+export const Name =  styled.Text``;
