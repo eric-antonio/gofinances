@@ -1,7 +1,9 @@
 import React , {useState}from "react";
 import { Modal } from "react-native";
+import { useForm}  from'react-hook-form'
 
 import { Input } from "../../components/Form/Input/index";
+import { InputFrom } from "../../components/Form/InputFrom/index";
 import { Button } from "../../components/Form/Button/index";
 import { TransactionTypeButton } from "../../components/Form/TransactionTypeButton";
 import { CategorySelectButton } from "../../components/Form/CategorySelectButton";
@@ -18,6 +20,10 @@ import {
 } from "./styles";
 
 
+interface FromData{
+  name: string;
+  amount: string
+}
 
 export function Register() {
   // Esse estado serve para ajuda a identificar que botão esta a ser selecionado!
@@ -31,6 +37,12 @@ export function Register() {
     key: 'category',
     name: 'Categoria',
   });
+
+
+  const {
+    control,
+    handleSubmit
+  } = useForm();
   
   // ? Temos aqui a funções  da App
   function handelTransactionTypeSelect(type: 'up' | 'down'){
@@ -47,10 +59,10 @@ export function Register() {
 
   }
 
-  function handelRegister(){
+  function handelRegister(form: FromData){
     const data ={
-      // name,
-      // amount,
+      name: form.name,
+      amount: form.amount,
       transactionType,
       categoryState: categoryState.key
     }
@@ -71,11 +83,15 @@ export function Register() {
 
         <Fildes>
 
-          <Input
+          <InputFrom
+            control={control}
+            name="name"
             placeholder="Name"
           />
 
-          <Input
+          <InputFrom
+            control={control}
+            name="amount"
             placeholder="Amount"
           />
 
@@ -106,7 +122,7 @@ export function Register() {
         {/* Botão laranja! */}
         <Button
           title="Send"
-          onPress={handelRegister}
+          onPress={handleSubmit(handelRegister)}
         />
 
       </Form>
