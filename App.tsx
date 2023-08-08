@@ -32,8 +32,8 @@ export default function App() {
     <ThemeProvider theme={theme}>
       <StatusBar style="light" />
       {/* <Dashboard/> */}
-      {/* <Register/> */}
-      <CategorySelect/>
+      <Register/>
+      {/* <CategorySelect/> */}
     </ThemeProvider>
     
   )

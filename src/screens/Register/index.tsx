@@ -1,15 +1,27 @@
 import React , {useState}from "react";
+import { Modal } from "react-native";
+
 import { Input } from "../../components/Form/Input/index";
 import { Button } from "../../components/Form/Button/index";
-import { Container, Header, Title,Form,Fildes , TransactionTypes} from "./styles";
 import { TransactionTypeButton } from "../../components/Form/TransactionTypeButton";
-import { Category } from "../../components/TransactionCard/styles";
-import { CategorySelect } from "../../components/Form/CategorySelect";
+import { CategorySelectButton } from "../../components/Form/CategorySelectButton";
+
+import { 
+  Container,
+  Header, 
+  Title,
+  Form,
+  Fildes, 
+  TransactionTypes
+} from "./styles";
+
+
+
 export function Register() {
   // Esse estado serve para ajuda a identificar que botão esta a ser selecionado!
   const [transactionType, setTransactionType] = useState('');
   
-  // TODO: Temos aqui a função 
+  // ? Temos aqui a função 
   function handelTransactionTypeSelect(type: 'up' | 'down'){
     setTransactionType(type);
   }
@@ -18,7 +30,7 @@ export function Register() {
     <Container>
       {/*  Titulo da Pagina  */}
       <Header>
-        <Title>Cadastro</Title>
+        <Title>Register</Title>
       </Header>
 
       {/* Formularios  */}
@@ -27,11 +39,11 @@ export function Register() {
         <Fildes>
 
           <Input
-            placeholder="Nome"
+            placeholder="Name"
           />
 
           <Input
-            placeholder="Preço"
+            placeholder="Price"
           />
 
           <TransactionTypes>
@@ -50,13 +62,13 @@ export function Register() {
             />
 
           </TransactionTypes>
-          <CategorySelect title="Categoria"/>
+          <CategorySelectButton title="Category"/>
 
         </Fildes>
 
         {/* Botão laranja! */}
         <Button
-          title="Enviar"
+          title="Send"
         />
 
       </Form>
