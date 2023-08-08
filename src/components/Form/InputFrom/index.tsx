@@ -18,9 +18,13 @@ export function InputFrom( {control, name , ...rest} : Props){
 
             <Controller
                 control={control}
-                render={({field: {onChange, onBlur , value}})=>(
+                render={({field: {onChange,  value}})=>(
 
-                    <Input {...rest} />
+                    <Input 
+                        onChangeText={onChange}
+                        value={value}
+                        {...rest} 
+                    />
                 )}
                 name={name}
             /> 
