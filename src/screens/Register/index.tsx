@@ -24,12 +24,15 @@ export function Register() {
   const [transactionType, setTransactionType] = useState('');
   const [categoryModalOpen, setCategoryModalOpen] = useState(false);
 
+  const [name, steName] = useState('');
+  const [amount , setAmount] =  useState('');
+
   const [categoryState, setCategoryState] = useState({
     key: 'category',
     name: 'Categoria',
   });
   
-  // ? Temos aqui a função 
+  // ? Temos aqui a funções  da App
   function handelTransactionTypeSelect(type: 'up' | 'down'){
     setTransactionType(type);
   }
@@ -42,6 +45,16 @@ export function Register() {
   function handelCloseSelectCategoryModal(){
     setCategoryModalOpen(false)
 
+  }
+
+  function handelRegister(){
+    const data ={
+      name,
+      amount,
+      transactionType,
+      categoryState: categoryState.key
+    }
+    console.log(data);
   }
 
 
@@ -60,10 +73,12 @@ export function Register() {
 
           <Input
             placeholder="Name"
+            onChangeText={steName}
           />
 
           <Input
             placeholder="Amount"
+            onChangeText={setAmount}
           />
 
           <TransactionTypes>
@@ -93,6 +108,7 @@ export function Register() {
         {/* Botão laranja! */}
         <Button
           title="Send"
+          onPress={handelRegister}
         />
 
       </Form>
