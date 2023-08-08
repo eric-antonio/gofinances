@@ -24,8 +24,8 @@ export function Register() {
   const [transactionType, setTransactionType] = useState('');
   const [categoryModalOpen, setCategoryModalOpen] = useState(false);
 
-  const [name, steName] = useState('');
-  const [amount , setAmount] =  useState('');
+
+
 
   const [categoryState, setCategoryState] = useState({
     key: 'category',
@@ -49,8 +49,8 @@ export function Register() {
 
   function handelRegister(){
     const data ={
-      name,
-      amount,
+      // name,
+      // amount,
       transactionType,
       categoryState: categoryState.key
     }
@@ -73,12 +73,10 @@ export function Register() {
 
           <Input
             placeholder="Name"
-            onChangeText={steName}
           />
 
           <Input
             placeholder="Amount"
-            onChangeText={setAmount}
           />
 
           <TransactionTypes>
