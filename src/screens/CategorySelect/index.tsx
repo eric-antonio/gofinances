@@ -5,10 +5,14 @@ import {
   Title,
   Category,
   Icon,
-  Name
+  Name,
+  Separator,
+  Footer,
+  ButtonText
 } from './styles'
 import { FlatList } from 'react-native';
 import { categories } from '../../utils/categories';
+import { Button } from '../../components/Form/Button';
 
 
 interface  Category{
@@ -45,7 +49,14 @@ export function CategorySelect(
             <Name>{item.name}</Name>
           </Category>
         )}
+        ItemSeparatorComponent={()=> <Separator/>}
       />
+
+
+      <Footer>
+        <Button title = 'Select'>
+        </Button>
+      </Footer>
 
 
     </Container>
