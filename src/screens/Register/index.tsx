@@ -84,7 +84,7 @@ export function Register() {
           </TransactionTypes>
 
           <CategorySelectButton 
-            title="Category"
+            title={categoryState.name}
             onPress = {handelOpenSelectCategoryModal}
           />
 
