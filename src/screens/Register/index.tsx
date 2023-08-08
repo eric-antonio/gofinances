@@ -6,6 +6,8 @@ import { Button } from "../../components/Form/Button/index";
 import { TransactionTypeButton } from "../../components/Form/TransactionTypeButton";
 import { CategorySelectButton } from "../../components/Form/CategorySelectButton";
 
+import {CategorySelect} from '../CategorySelect/index'
+
 import { 
   Container,
   Header, 
@@ -20,11 +22,29 @@ import {
 export function Register() {
   // Esse estado serve para ajuda a identificar que botão esta a ser selecionado!
   const [transactionType, setTransactionType] = useState('');
+  const [categoryModalOpen, setCategoryModalOpen] = useState(false);
+
+  const [categoryState, setCategoryState] = useState({
+    key: 'category',
+    name: 'Categoria',
+  });
   
   // ? Temos aqui a função 
   function handelTransactionTypeSelect(type: 'up' | 'down'){
     setTransactionType(type);
   }
+
+  function handelOpenSelectCategoryModal(){
+    setCategoryModalOpen(true)
+
+  }
+
+  function handelCloseSelectCategoryModal(){
+    setCategoryModalOpen(false)
+
+  }
+
+
 
   return (
     <Container>
@@ -62,7 +82,11 @@ export function Register() {
             />
 
           </TransactionTypes>
-          <CategorySelectButton title="Category"/>
+
+          <CategorySelectButton 
+            title="Category"
+            onPress = {handelOpenSelectCategoryModal}
+          />
 
         </Fildes>
 
@@ -72,6 +96,15 @@ export function Register() {
         />
 
       </Form>
+
+      <Modal visible={categoryModalOpen}>
+        <CategorySelect
+          category = {categoryState}
+          steCategory = {setCategoryState}
+          closeSelectCategory = {handelCloseSelectCategoryModal}
+          
+        />
+      </Modal>
 
     </Container>
   );

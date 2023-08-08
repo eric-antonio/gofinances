@@ -21,7 +21,7 @@ interface  Category{
 }
 
 interface Props{
-    category: string
+    category: Category;
     steCategory: (category : Category) => void;
     closeSelectCategory:()=> void;
 }
@@ -36,7 +36,7 @@ export function CategorySelect(
     <Container>
 
       <Header>
-        <Title> Categoria </Title>
+        <Title> Category</Title>
       </Header>
 
       <FlatList
@@ -54,7 +54,10 @@ export function CategorySelect(
 
 
       <Footer>
-        <Button title = 'Select'>
+        <Button 
+          title = 'Select'
+          onPress={closeSelectCategory}
+          >
         </Button>
       </Footer>
 
