@@ -32,6 +32,9 @@ export function CategorySelect(
     closeSelectCategory
   }:Props){
 
+    function handelCategorySelect(category: Category){
+      steCategory(category)
+    }
   return (
     <Container>
 
@@ -44,10 +47,15 @@ export function CategorySelect(
         style={{flex:1, width:'100%'}}
         keyExtractor={(item) => item.key}
         renderItem={({item})=> (
-          <Category>
+
+          <Category
+            onPress = { () => handelCategorySelect(item)}
+            isActive = {category.key === item.key}
+          >
             <Icon name = {item.icon}/>
             <Name>{item.name}</Name>
           </Category>
+
         )}
         ItemSeparatorComponent={()=> <Separator/>}
       />
