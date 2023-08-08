@@ -63,7 +63,7 @@ export function Register() {
           />
 
           <Input
-            placeholder="Price"
+            placeholder="Amount"
           />
 
           <TransactionTypes>
