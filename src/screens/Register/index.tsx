@@ -72,67 +72,70 @@ export function Register() {
 
 
   return (
-    <Container>
+    <TouchableWithoutFeedback>
+      <Container>
 
-      <Header>
-        <Title>Register</Title>
-      </Header>
+        <Header>
+          <Title>Register</Title>
+        </Header>
 
-      <Form>
-        <Fildes>
-          <InputFrom
-            control={control}
-            name="name"
-            placeholder="Name"
-            autoCapitalize="sentences"
-            autoCorrect={false}
-          />
-
-          <InputFrom
-            control={control}
-            name="amount"
-            placeholder="Amount"
-            keyboardType="numeric"
-          
-          />
-
-          <TransactionTypes>
-            <TransactionTypeButton
-              type="up"
-              title="Income"
-              onPress={() => handelTransactionTypeSelect('up')}
-              isActive={transactionType === 'up'}
+        <Form>
+          <Fildes>
+            <InputFrom
+              control={control}
+              name="name"
+              placeholder="Name"
+              autoCapitalize="sentences"
+              autoCorrect={false}
             />
 
-            <TransactionTypeButton
-              type="down"
-              title="Outcome"
-              onPress={() => handelTransactionTypeSelect('down')}
-              isActive={transactionType === 'down'}
+            <InputFrom
+              control={control}
+              name="amount"
+              placeholder="Amount"
+              keyboardType="numeric"
+            
             />
 
-          </TransactionTypes>
+            <TransactionTypes>
+              <TransactionTypeButton
+                type="up"
+                title="Income"
+                onPress={() => handelTransactionTypeSelect('up')}
+                isActive={transactionType === 'up'}
+              />
 
-          <CategorySelectButton 
-            title={categoryState.name}
-            onPress = {handelOpenSelectCategoryModal}
+              <TransactionTypeButton
+                type="down"
+                title="Outcome"
+                onPress={() => handelTransactionTypeSelect('down')}
+                isActive={transactionType === 'down'}
+              />
+
+            </TransactionTypes>
+
+            <CategorySelectButton 
+              title={categoryState.name}
+              onPress = {handelOpenSelectCategoryModal}
+            />
+          </Fildes>
+
+          <Button
+            title="Send"
+            onPress={handleSubmit(handelRegister)}
           />
-        </Fildes>
+        </Form>
 
-        <Button
-          title="Send"
-          onPress={handleSubmit(handelRegister)}
-        />
-      </Form>
+        <Modal visible={categoryModalOpen}>
+          <CategorySelect
+            category = {categoryState}
+            steCategory = {setCategoryState}
+            closeSelectCategory = {handelCloseSelectCategoryModal}
+          />
+        </Modal>
 
-      <Modal visible={categoryModalOpen}>
-        <CategorySelect
-          category = {categoryState}
-          steCategory = {setCategoryState}
-          closeSelectCategory = {handelCloseSelectCategoryModal}
-        />
-      </Modal>
-
-    </Container>
+      </Container>
+      
+    </TouchableWithoutFeedback>
   );
 }
