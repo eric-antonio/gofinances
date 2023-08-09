@@ -87,12 +87,16 @@ export function Register() {
             control={control}
             name="name"
             placeholder="Name"
+            autoCapitalize="sentences"
+            autoCorrect={false}
           />
 
           <InputFrom
             control={control}
             name="amount"
             placeholder="Amount"
+            keyboardType="numeric"
+          
           />
 
           <TransactionTypes>
