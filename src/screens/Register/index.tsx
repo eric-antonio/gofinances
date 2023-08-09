@@ -1,5 +1,5 @@
 import React , {useState}from "react";
-import { Modal } from "react-native";
+import { Modal , TouchableWithoutFeedback} from "react-native";
 import { useForm}  from'react-hook-form'
 
 import { Input } from "../../components/Form/Input/index";
@@ -73,16 +73,13 @@ export function Register() {
 
   return (
     <Container>
-      {/*  Titulo da Pagina  */}
+
       <Header>
         <Title>Register</Title>
       </Header>
 
-      {/* Formularios  */}
       <Form>
-
         <Fildes>
-
           <InputFrom
             control={control}
             name="name"
@@ -120,15 +117,12 @@ export function Register() {
             title={categoryState.name}
             onPress = {handelOpenSelectCategoryModal}
           />
-
         </Fildes>
 
-        {/* Botão laranja! */}
         <Button
           title="Send"
           onPress={handleSubmit(handelRegister)}
         />
-
       </Form>
 
       <Modal visible={categoryModalOpen}>
@@ -136,7 +130,6 @@ export function Register() {
           category = {categoryState}
           steCategory = {setCategoryState}
           closeSelectCategory = {handelCloseSelectCategoryModal}
-          
         />
       </Modal>
 
