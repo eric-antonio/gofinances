@@ -34,10 +34,6 @@ export function Register() {
   // Esse estado serve para ajuda a identificar que botão esta a ser selecionado!
   const [transactionType, setTransactionType] = useState('');
   const [categoryModalOpen, setCategoryModalOpen] = useState(false);
-
-
-
-
   const [categoryState, setCategoryState] = useState({
     key: 'category',
     name: 'Categoria',
@@ -71,8 +67,8 @@ export function Register() {
       return Alert.alert('Select the transaction type!');
 
     if(categoryState.key === 'category')
-    
-      return Alert.alert('Select the Category');
+
+      return Alert.alert('Select the Category!');
 
 
 
