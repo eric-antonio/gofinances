@@ -1,5 +1,10 @@
 import React , {useState}from "react";
-import { Keyboard, Modal , TouchableWithoutFeedback} from "react-native";
+import { 
+  Keyboard, 
+  Modal , 
+  TouchableWithoutFeedback,
+  Alert
+} from "react-native";
 import { useForm}  from'react-hook-form'
 
 import { Input } from "../../components/Form/Input/index";
@@ -60,6 +65,17 @@ export function Register() {
   }
 
   function handelRegister(form: FromData){
+
+    if(!transactionType)
+
+      return Alert.alert('Select the transaction type!');
+
+    if(categoryState.key === 'category')
+    
+      return Alert.alert('Select the Category');
+
+
+
     const data ={
       name: form.name,
       amount: form.amount,
