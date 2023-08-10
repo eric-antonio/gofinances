@@ -5,6 +5,10 @@ import {
   TouchableWithoutFeedback,
   Alert
 } from "react-native";
+
+import * as Yup from 'yup';
+
+
 import { useForm}  from'react-hook-form'
 
 import { Input } from "../../components/Form/Input/index";
