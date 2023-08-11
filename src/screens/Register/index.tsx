@@ -7,6 +7,7 @@ import {
 } from "react-native";
 
 import * as Yup from 'yup';
+import  { yupResolver } from '@hookform/resolvers/yup';
 
 
 import { useForm}  from'react-hook-form'
@@ -34,8 +35,20 @@ interface FromData{
   amount: string
 }
 
+const schema  =  Yup.object().shape({
+  name: Yup.
+  string().
+  required('Name is required'),
+
+  amount: Yup
+  .number()
+  .typeError('Insert a number')
+  .positive("The amount can't be less than zero")
+  .required('Amount required')
+})
+
 export function Register() {
-  // Esse estado serve para ajuda a identificar que botão esta a ser selecionado!
+
   const [transactionType, setTransactionType] = useState('');
   const [categoryModalOpen, setCategoryModalOpen] = useState(false);
   const [categoryState, setCategoryState] = useState({
@@ -47,9 +60,13 @@ export function Register() {
   const {
     control,
     handleSubmit
-  } = useForm();
+  } = useForm({
+
+    resolver:yupResolver(schema)
+    
+  });
   
-  // ? Temos aqui a funções  da App
+
   function handelTransactionTypeSelect(type: 'up' | 'down'){
     setTransactionType(type);
   }
