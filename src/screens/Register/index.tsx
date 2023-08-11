@@ -59,11 +59,12 @@ export function Register() {
 
   const {
     control,
-    handleSubmit
+    handleSubmit,
+    formState:{ errors }
   } = useForm({
 
     resolver:yupResolver(schema)
-    
+
   });
   
 
@@ -115,11 +116,12 @@ export function Register() {
         <Form>
           <Fildes>
             <InputFrom
-              control={control}
               name="name"
+              control = {control}
               placeholder="Name"
               autoCapitalize="sentences"
               autoCorrect={false}
+              error = {errors.name && errors.name.message}
             />
 
             <InputFrom
@@ -127,6 +129,7 @@ export function Register() {
               name="amount"
               placeholder="Amount"
               keyboardType="numeric"
+              error = {errors.amount && errors.amount.message}
             
             />
 
