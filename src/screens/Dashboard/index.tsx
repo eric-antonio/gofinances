@@ -79,12 +79,6 @@ export function Dashboard(){
           <UserInfo>
             <Photo source = {{uri:'https://github.com/eric-antonio.png'}}/>
 
-            <User>
-
-              <UserGreeting>Olá,</UserGreeting>
-              <UserName>Éric António </UserName>
-
-            </User>
 
           </UserInfo>
           
