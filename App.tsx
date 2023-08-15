@@ -3,6 +3,9 @@ import { ThemeProvider } from "styled-components";
 import { StatusBar } from "expo-status-bar";
 import SplashScreen from "expo-splash-screen";
 import AppLoading from "expo-app-loading";
+
+import {BorderlessButton , RectButton} from 'react-native-gesture-handler';
+
 import {
   useFonts,
   Poppins_400Regular,
