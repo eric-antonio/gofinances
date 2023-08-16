@@ -95,6 +95,12 @@ export function Dashboard(){
 
       <HighlightCards>
 
+        <HighlightCard 
+          type="up"
+          title="Entrdas" 
+          amount="12.000,00MT" 
+          lastTransaction="Ultima entrada dia 01 de Julho."
+        />
 
         <HighlightCard 
           type="down"
