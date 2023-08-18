@@ -100,7 +100,16 @@ export function Register() {
       transactionType,
       categoryState: categoryState.key
     }
-    console.log(data);
+
+    try {
+
+      const data  = '@gofinances:transactions';
+      
+      
+    } catch (error) {
+      console.log(error);
+      Alert.alert("Não foi possivel salvar");
+    }
   }
 
 
