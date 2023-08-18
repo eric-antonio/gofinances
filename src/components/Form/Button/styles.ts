@@ -9,6 +9,7 @@ export const Container = styled(TouchableOpacity)`
   border-radius: 5px;
   align-items: center;
   padding: 18px;
+  
 
   background-color: ${ ( {theme} ) => theme.colors.secondary};
 

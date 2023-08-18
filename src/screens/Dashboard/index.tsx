@@ -13,6 +13,7 @@ import {
   Transactions,
   Title,
   TransactionList,
+  TurnoffButton
 
 } from "./styles";
 import { HighlightCard } from "../../components/HighlightCard";
@@ -87,8 +88,12 @@ export function Dashboard(){
             </User>
 
           </UserInfo>
+
+          <TurnoffButton onPress = {()=>{}}>
+            <Icon name='power'/>
+          </TurnoffButton>
           
-          <Icon name='power'/>
+          
         </UserWrapper>
         
       </Header>
