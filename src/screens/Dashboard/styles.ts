@@ -66,9 +66,9 @@ export const UserName= styled.Text`
   font-family: ${({theme}) => theme.fonts.bold};
 `;
 
-export const TurnoffButton= styled.TouchableOpacity`
-  
-`;
+export const TurnoffButton= styled.TouchableOpacity.attrs({
+  activeOpacity:0.5
+})``;
 
 export const Icon = styled(Feather)`
   color: ${({theme})=> theme.colors.secondary};
