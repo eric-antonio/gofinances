@@ -118,10 +118,7 @@ export function Register() {
     <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
       <Container>
 
-        <Header>
-          <Title>Register</Title>
-        </Header>
-
+    
         <Form>
           <Fildes>
             <InputFrom
