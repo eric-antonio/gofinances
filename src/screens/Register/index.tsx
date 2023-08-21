@@ -103,6 +103,7 @@ export function Register() {
     try {
 
       const data  = '@gofinances:transactions';
+      // AsyncStorage.setItem();
       
       
     } catch (error) {
