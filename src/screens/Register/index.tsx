@@ -8,11 +8,10 @@ import {
 
 import * as Yup from 'yup';
 import  { yupResolver } from '@hookform/resolvers/yup';
-
+import AsyncStorage from '@react-native-async-storage/async-storage'
 
 import { useForm}  from'react-hook-form'
 
-import { Input } from "../../components/Form/Input/index";
 import { InputFrom } from "../../components/Form/InputFrom/index";
 import { Button } from "../../components/Form/Button/index";
 import { TransactionTypeButton } from "../../components/Form/TransactionTypeButton";
@@ -82,7 +81,7 @@ export function Register() {
 
   }
 
-  function handelRegister(form: FromData){
+  async function handelRegister(form: FromData){
 
     if(!transactionType)
 
