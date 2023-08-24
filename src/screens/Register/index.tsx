@@ -19,14 +19,10 @@ import { CategorySelectButton } from "../../components/Form/CategorySelectButton
 
 import {CategorySelect} from '../CategorySelect/index'
 
-import { 
-  Container,
-  Header, 
-  Title,
-  Form,
-  Fildes, 
-  TransactionTypes
+import { Container,Header, Title , Form, Fields, TransactionTypes
 } from "./styles";
+
+ const fields = '2';
 
 
 interface FromData{
@@ -141,7 +137,7 @@ export function Register() {
         </Header>
 
         <Form>
-          <Fildes>
+          <Fields>
             <InputFrom
               name="name"
               control = {control}
@@ -181,7 +177,7 @@ export function Register() {
               title={categoryState.name}
               onPress = {handleOpenSelectCategoryModal}
             />
-          </Fildes>
+          </Fields>
 
           <Button
             title="Send"
