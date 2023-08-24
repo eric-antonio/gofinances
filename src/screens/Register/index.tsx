@@ -1,19 +1,17 @@
 import React , {useState, useEffect}from "react";
 import { Keyboard, Modal , TouchableWithoutFeedback, Alert} from "react-native";
-
 import * as Yup from 'yup';
 import  { yupResolver } from '@hookform/resolvers/yup';
 import { useForm}  from'react-hook-form'
 import AsyncStorage from '@react-native-async-storage/async-storage'
-
 import { InputFrom } from "../../components/Form/InputFrom/index";
 import { Button } from "../../components/Form/Button/index";
 import { TransactionTypeButton } from "../../components/Form/TransactionTypeButton";
 import { CategorySelectButton } from "../../components/Form/CategorySelectButton";
 import {CategorySelect} from '../CategorySelect/index'
+import { Container,Header, Title , Form, Fields, TransactionTypes} from "./styles";
 
-import { Container,Header, Title , Form, Fields, TransactionTypes
-} from "./styles";
+import uuid from 'react-native-uuid';
 
 interface FromData{
   name: string;
@@ -82,10 +80,12 @@ export function Register() {
 
 
     const newTransaction ={
+      id:String(uuid.v4()),
       name: form.name,
       amount: form.amount,
       transactionType,
-      categoryState: categoryState.key
+      categoryState: categoryState.key,
+      data : new Date(),
     }
 
     try {
