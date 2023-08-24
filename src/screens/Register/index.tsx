@@ -95,7 +95,7 @@ export function Register() {
 
 
 
-    const data ={
+    const newTransaction ={
       name: form.name,
       amount: form.amount,
       transactionType,
@@ -103,8 +103,15 @@ export function Register() {
     }
 
     try {
+      const data = await AsyncStorage.getItem(dataKey);
 
-      await AsyncStorage.setItem(dataKey,JSON.stringify(data));
+      const  currentData = data ? JSON.parse(data) : [];
+
+      const dataFormatted = [
+        ... currentData, newTransaction
+      ];
+
+      await AsyncStorage.setItem(dataKey,JSON.stringify(dataFormatted));
             
     } catch (error) {
       console.log(error);
@@ -119,6 +126,10 @@ export function Register() {
     }
 
     loadData();
+    // async function removeAll(){
+    //   await AsyncStorage.removeItem(dataKey);
+    // }
+    // removeAll();
   },[]);
 
   return (
