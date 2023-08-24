@@ -1,4 +1,4 @@
-import React , {useState}from "react";
+import React , {useState, useEffect}from "react";
 import { 
   Keyboard, 
   Modal , 
@@ -48,6 +48,8 @@ const schema  =  Yup.object().shape({
 
 export function Register() {
 
+  const dataKey  = '@gofinances:transactions';
+
   const [transactionType, setTransactionType] = useState('');
   const [categoryModalOpen, setCategoryModalOpen] = useState(false);
   const [categoryState, setCategoryState] = useState({
@@ -67,21 +69,21 @@ export function Register() {
   });
   
 
-  function handelTransactionTypeSelect(type: 'up' | 'down'){
+  function handleTransactionTypeSelect(type: 'up' | 'down'){
     setTransactionType(type);
   }
 
-  function handelOpenSelectCategoryModal(){
+  function handleOpenSelectCategoryModal(){
     setCategoryModalOpen(true)
 
   }
 
-  function handelCloseSelectCategoryModal(){
+  function handleCloseSelectCategoryModal(){
     setCategoryModalOpen(false)
 
   }
 
-  async function handelRegister(form: FromData){
+  async function handleRegister(form: FromData){
 
     if(!transactionType)
 
@@ -102,17 +104,22 @@ export function Register() {
 
     try {
 
-      const data  = '@gofinances:transactions';
-      // AsyncStorage.setItem();
-      
-      
+      await AsyncStorage.setItem(dataKey,JSON.stringify(data));
+            
     } catch (error) {
       console.log(error);
       Alert.alert("Não foi possivel salvar");
     }
   }
 
+  useEffect(()=>{
+    async function loadData(){
+      const data = await AsyncStorage.getItem(dataKey);
+      console.log(data)
+    }
 
+    loadData();
+  },[]);
 
   return (
     <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
@@ -146,14 +153,14 @@ export function Register() {
               <TransactionTypeButton
                 type="up"
                 title="Income"
-                onPress={() => handelTransactionTypeSelect('up')}
+                onPress={() => handleTransactionTypeSelect('up')}
                 isActive={transactionType === 'up'}
               />
 
               <TransactionTypeButton
                 type="down"
                 title="Outcome"
-                onPress={() => handelTransactionTypeSelect('down')}
+                onPress={() => handleTransactionTypeSelect('down')}
                 isActive={transactionType === 'down'}
               />
 
@@ -161,13 +168,13 @@ export function Register() {
 
             <CategorySelectButton 
               title={categoryState.name}
-              onPress = {handelOpenSelectCategoryModal}
+              onPress = {handleOpenSelectCategoryModal}
             />
           </Fildes>
 
           <Button
             title="Send"
-            onPress={handleSubmit(handelRegister)}
+            onPress={handleSubmit(handleRegister)}
           />
         </Form>
 
@@ -175,7 +182,7 @@ export function Register() {
           <CategorySelect
             category = {categoryState}
             steCategory = {setCategoryState}
-            closeSelectCategory = {handelCloseSelectCategoryModal}
+            closeSelectCategory = {handleCloseSelectCategoryModal}
           />
         </Modal>
 
