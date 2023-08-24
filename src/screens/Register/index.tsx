@@ -15,9 +15,6 @@ import {CategorySelect} from '../CategorySelect/index'
 import { Container,Header, Title , Form, Fields, TransactionTypes
 } from "./styles";
 
- const fields = '2';
-
-
 interface FromData{
   name: string;
   amount: string
