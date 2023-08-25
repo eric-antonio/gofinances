@@ -36,7 +36,9 @@ export function Register() {
 
   const [transactionType, setTransactionType] = useState('');
   const [categoryModalOpen, setCategoryModalOpen] = useState(false);
-  const [categoryState, setCategoryState] = useState({
+
+
+  const [category, setCategory] = useState({
     key: 'category',
     name: 'Categoria',
   });
@@ -73,7 +75,7 @@ export function Register() {
 
       return Alert.alert('Select the transaction type!');
 
-    if(categoryState.key === 'category')
+    if(category.key === 'category')
 
       return Alert.alert('Select the Category!');
 
@@ -84,7 +86,7 @@ export function Register() {
       name: form.name,
       amount: form.amount,
       transactionType,
-      categoryState: categoryState.key,
+      category: category.key,
       data : new Date(),
     }
 
@@ -98,6 +100,13 @@ export function Register() {
       ];
 
       await AsyncStorage.setItem(dataKey,JSON.stringify(dataFormatted));
+
+      // reset the fields 
+      setTransactionType('');
+      setCategory({
+        key: 'category',
+        name: 'Categoria',
+      })
             
     } catch (error) {
       console.log(error);
@@ -164,7 +173,7 @@ export function Register() {
             </TransactionTypes>
 
             <CategorySelectButton 
-              title={categoryState.name}
+              title={category.name}
               onPress = {handleOpenSelectCategoryModal}
             />
           </Fields>
@@ -177,8 +186,8 @@ export function Register() {
 
         <Modal visible={categoryModalOpen}>
           <CategorySelect
-            category = {categoryState}
-            steCategory = {setCategoryState}
+            category = {category}
+            steCategory = {setCategory}
             closeSelectCategory = {handleCloseSelectCategoryModal}
           />
         </Modal>
