@@ -1,9 +1,15 @@
 import React , {useState, useEffect}from "react";
-import { Keyboard, Modal , TouchableWithoutFeedback, Alert} from "react-native";
+import { useForm}  from'react-hook-form';
+import { useNavigation } from "@react-navigation/native";
 import * as Yup from 'yup';
 import  { yupResolver } from '@hookform/resolvers/yup';
-import { useForm}  from'react-hook-form'
-import AsyncStorage from '@react-native-async-storage/async-storage'
+
+import uuid from 'react-native-uuid';
+
+
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import { Keyboard, Modal , TouchableWithoutFeedback, Alert} from "react-native";
+
 import { InputFrom } from "../../components/Form/InputFrom/index";
 import { Button } from "../../components/Form/Button/index";
 import { TransactionTypeButton } from "../../components/Form/TransactionTypeButton";
@@ -11,7 +17,7 @@ import { CategorySelectButton } from "../../components/Form/CategorySelectButton
 import {CategorySelect} from '../CategorySelect/index'
 import { Container,Header, Title , Form, Fields, TransactionTypes} from "./styles";
 
-import uuid from 'react-native-uuid';
+
 
 interface FromData{
   name: string;
@@ -43,9 +49,11 @@ export function Register() {
     name: 'Categoria',
   });
 
+  const navigation = useNavigation();
 
   const {
     control,
+    reset,
     handleSubmit,
     formState:{ errors }
   } = useForm({
@@ -102,11 +110,14 @@ export function Register() {
       await AsyncStorage.setItem(dataKey,JSON.stringify(dataFormatted));
 
       // reset the fields 
+      reset();
       setTransactionType('');
       setCategory({
         key: 'category',
         name: 'Categoria',
-      })
+      });
+
+      navigation.navigate('Listing');
             
     } catch (error) {
       console.log(error);
