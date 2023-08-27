@@ -1,10 +1,13 @@
+import "intl";
+import "intl/locale-data/jsonp/pt-BR";
+
 import React from "react";
 import { ThemeProvider } from "styled-components";
 import { StatusBar } from "expo-status-bar";
 import SplashScreen from "expo-splash-screen";
 import AppLoading from "expo-app-loading";
 
-import {BorderlessButton , RectButton} from 'react-native-gesture-handler';
+import { BorderlessButton, RectButton } from "react-native-gesture-handler";
 
 import {
   useFonts,
@@ -15,12 +18,11 @@ import {
 
 import theme from "./src/global/styles/theme";
 
-import {NavigationContainer} from "@react-navigation/native";
+import { NavigationContainer } from "@react-navigation/native";
 import { AppRoutes } from "./src/routes/app.routes";
 
 import { Dashboard } from "./src/screens/Dashboard";
 import { Register } from "./src/screens/Register";
-
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -37,9 +39,8 @@ export default function App() {
       <StatusBar style="light" />
 
       <NavigationContainer>
-        <AppRoutes/>
+        <AppRoutes />
       </NavigationContainer>
-
     </ThemeProvider>
   );
 }
